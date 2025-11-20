@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "evoforge-backend"
+version = "0.1.0"
+description = "EvoForge - Self-Evolving AI Agent Platform Backend"
+authors = ["EvoForge Team"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+line_length = 100
