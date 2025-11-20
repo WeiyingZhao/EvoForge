@@ -3,7 +3,6 @@ Core configuration for EvoForge backend.
 """
 from typing import List
 from pydantic_settings import BaseSettings
-from pydantic import PostgresDsn, validator
 
 
 class Settings(BaseSettings):
@@ -17,7 +16,7 @@ class Settings(BaseSettings):
     VERSION: str = "0.1.0"
 
     # Database
-    DATABASE_URL: PostgresDsn
+    DATABASE_URL: str = "sqlite:///./evoforge.db"
 
     # CORS
     CORS_ORIGINS: List[str] = ["http://localhost:3000"]
@@ -42,7 +41,7 @@ class Settings(BaseSettings):
     SANDBOX_NETWORK_ENABLED: bool = False
 
     # Security
-    SECRET_KEY: str
+    SECRET_KEY: str = "dev-secret-key-change-in-production"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
 
