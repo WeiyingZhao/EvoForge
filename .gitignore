@@ -74,3 +74,6 @@ data/
 uploads/
 evolution_results/
 checkpoints/
+
+# Claude Code local settings (machine-specific, may contain local paths)
+.claude/settings.local.json
